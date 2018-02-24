@@ -3,32 +3,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card card-default">
-                <div class="card-header">Home</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <div class="col s12 m6">
-                      <div class="card blue">
-                        <div class="card-content white-text">
-                            <span class="card-title">Favoritos</span>
-                            <p>Lista de carros favoritos</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Visualizar</a>
-                        </div>
-                      </div>
+        <div class="col-md-10">
+            <painel titulo="Home">
+                <div class="row">
+                    <div class="col-md-4">
+                        <caixa titulo="Participantes" descricao="pessoas" url="#" cor="red" icone="fa fa-user"></caixa>
                     </div>
-
-
-                    
+                    <div class="col-md-4">
+                        <caixa titulo="Livros" descricao="pessoas" url="#" cor="blue" icone="fa fa-book"></caixa>
+                    </div>
+                    <div class="col-md-4">
+                        <caixa titulo="Admin" descricao="pessoas" url="#" cor="green" icone="fa fa-key"></caixa>
+                    </div>
                 </div>
-            </div>
+            </painel>
         </div>
     </div>
 </div>
