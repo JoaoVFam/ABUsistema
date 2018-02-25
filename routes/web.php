@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('participantes', 'ParticipanteController');
+Route::middleware(['auth'])->group(function(){
+
+    Route::resource('participantes', 'ParticipanteController');
+});
+

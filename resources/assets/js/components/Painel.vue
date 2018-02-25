@@ -12,3 +12,15 @@
         props:['titulo']
     }
 </script>
+
+<style media="screen">
+
+    .card{
+        border-color: #ddd;
+    }
+
+    .card-header{
+        background-color: #ddd
+    }
+
+</style>

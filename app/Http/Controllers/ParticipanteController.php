@@ -19,7 +19,7 @@ class ParticipanteController extends Controller
      */
     public function index()
     {
-        return "ok";
+        return view('participantes.index');
     }
 
     /**
