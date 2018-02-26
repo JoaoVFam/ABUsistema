@@ -19,7 +19,20 @@ class ParticipanteController extends Controller
      */
     public function index()
     {
-        return view('participantes.index');
+        $listaMigalhas = json_encode([
+            ["titulo"=>"Home", "url"=>route('home')],
+            ["titulo"=>"Lista de participantes", "url"=>""]
+        ]);
+
+        $listaArtigos = json_encode([
+            ["id"=>1, "nome"=>"Roberto dos santos", "telefone"=>"59461984651"],
+            ["id"=>2, "nome"=>"claudineia oliveira", "telefone"=>"1981168161"],
+            ["id"=>3, "nome"=>"strugo alberto valter", "telefone"=>"123456789"],
+            ["id"=>4, "nome"=>"dino campos da rocha barbado", "telefone"=>"946584651"]
+            
+        ]);
+
+        return view('participantes.index', compact('listaMigalhas', 'listaArtigos'));
     }
 
     /**

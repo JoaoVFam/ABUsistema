@@ -1,6 +1,10 @@
 <template>
    <div class="card card-default">
-        <div class="card-header">{{titulo}}</div>
+        <nav v-if:="lista" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li  v-for="item in lista" :key="item.id" class="breadcrumb-item"><a v-if="item.url" v-bind:class="defineClass" v-bind:href="item.url">{{item.titulo}}</a><span v-if="!item.url" >{{item.titulo}}</span></li>
+            </ol>
+        </nav>
         <div class="card-body">
             <slot></slot>
         </div>
@@ -9,7 +13,16 @@
 
 <script>
     export default {
-        props:['titulo']
+        props:['lista'],
+        computed:{
+            defineClass: function(){
+                if(this.url){
+                    return "active";
+                }else{
+                    return "";
+                }
+            }
+        }
     }
 </script>
 
@@ -18,9 +31,4 @@
     .card{
         border-color: #ddd;
     }
-
-    .card-header{
-        background-color: #ddd
-    }
-
 </style>
